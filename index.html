@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WebAR Experience</title>
+    <script src=”https://aframe.io/releases/0.9.0/aframe.min.js”></script>
+    <script src=”https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js”></script>
+</head>
+<body>
+    <a-scene embedded arjs>
+        <!-- Add target images -->
+        <a-assets>
+            <img id="image-1" src="assets/1.png">
+            <img id="image-2" src="assets/2.png">
+            <img id="image-3" src="assets/3.png">
+        </a-assets>
+
+        <!-- Set up AR scene -->
+        <a-marker preset="custom" type="pattern" url="assets/1.patt">
+            <!-- Add 3D model for target1 -->
+            <a-entity position="0 0 0" scale="0.2 0.2 0.2" gltf-model="assets/1/scene.gltf"></a-entity>
+        </a-marker>
+
+        <a-marker preset="custom" type="pattern" url="assets/2.patt">
+            <!-- Add 3D model for target2 -->
+            <a-entity position="0 0 0" scale="0.2 0.2 0.2" gltf-model="assets/1/scene.gltf"></a-entity>
+        </a-marker>
+
+        <a-marker preset="custom" type="pattern" url="assets/3.patt">
+            <!-- Add 3D model for target3 -->
+            <a-entity position="0 0 0" scale="0.2 0.2 0.2" gltf-model="assets/1/scene.gltf"></a-entity>
+        </a-marker>
+
+        <!-- Customize AR experience -->
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html>
